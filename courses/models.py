@@ -15,8 +15,8 @@ class Course(models.Model):
     )
     price = models.PositiveSmallIntegerField()
     slug = AutoSlugField(blank=True, populate_from="title", unique=True)
-    created = models.DateTimeField(auto_now_add=True, blank=True)
-    updated = models.DateTimeField(auto_now=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True)
 
     class Meta:
         db_table = "course"

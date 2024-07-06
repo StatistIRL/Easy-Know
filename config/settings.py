@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # apps
     "courses",
+    "users",
     # Addons
     "debug_toolbar",
     "django_extensions",
@@ -65,6 +66,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = "users.User"
 
 AUTH_PASSWORD_VALIDATORS = [
     {
