@@ -2,7 +2,26 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from autoslug import AutoSlugField
 
-# Create your models here.
+
+class Category(models.Model):
+    name = models.CharField(max_length=255)
+    parent = models.ForeignKey(
+        "self", on_delete=models.CASCADE, related_name="children", null=True, blank=True
+    )
+    level = models.PositiveSmallIntegerField(editable=False, default=True)
+
+    class Meta:
+        db_table = "category"
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.parent:
+            self.level = self.parent.level + 1
+        else:
+            self.level = 0
 
 
 class Course(models.Model):
@@ -10,10 +29,13 @@ class Course(models.Model):
 
     title = models.CharField(max_length=255, unique=True)
     description = models.TextField()
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True, related_name="courses"
+    )
     level = models.PositiveSmallIntegerField(
         choices=COURSE_LEVELS, validators=[MinValueValidator(0), MaxValueValidator(2)]
     )
-    price = models.PositiveSmallIntegerField()
+    price = models.PositiveSmallIntegerField(default=0)
     slug = AutoSlugField(blank=True, populate_from="title", unique=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
