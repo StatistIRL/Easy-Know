@@ -1,0 +1,87 @@
+:root {
+    --bg-color: #F6F8FA;
+    --panel-color: #ffffff;
+    --accent-color: #F95E5E;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: var(--bg-color);
+}
+
+body {
+    min-width: 320px;
+    font-family: 'Manrope', sans-serif;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main.main {
+    flex: 1 1 auto;
+
+}
+
+.btn {
+    background-color: var(--accent-color);
+}
+
+/* =================== Header styles ===================== */
+
+.header {
+    background-color: var(--panel-color);
+    border-radius: 0 0 25px 25px;
+    padding: 25px;
+}
+
+.site-name {
+    font-weight: bold;
+}
+
+.users-btn {
+    display: flex;
+    justify-content: end;
+}
+
+.user-btn {
+    margin: 5px;
+}
+
+.dropdown-menu-btn {
+    border: none;
+    margin-top: 5px;
+    background-color: transparent;
+    transition: all 0.3s linear;
+
+}
+
+.dropdown-menu-btn:hover {
+    margin-top: 15px;
+}
+
+/* =================== Header styles ===================== */
+
+/* =================== Main styles ===================== */
+
+.content {
+    background-color: var(--panel-color);
+    border-radius: 25px;
+}
+
+/* =================== Main styles ===================== */
+
+/* =================== Footer styles ===================== */
+
+.footer {
+    background-color: var(--panel-color);
+    border-radius: 25px 25px 0 0;
+    padding: 25px;
+}
+
+.footer h2 {
+    text-align: center;
+}
