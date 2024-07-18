@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     # apps
     "courses",
     "users",
+    "easyknow",
     # Addons
     "debug_toolbar",
     "django_extensions",
@@ -93,7 +94,10 @@ USE_TZ = True
 
 # STATIC
 STATIC_URL = "static/"
-STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+# STATIC_ROOT = BASE_DIR / "static"
 
 # MEDIA
 MEDIA_ROOT = BASE_DIR / "media"
