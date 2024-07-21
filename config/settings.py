@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     "courses",
     "users",
     "easyknow",
+    "thumbnails",
     # Addons
     "debug_toolbar",
     "django_extensions",
