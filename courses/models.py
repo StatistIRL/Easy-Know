@@ -17,11 +17,11 @@ class Category(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
         if self.parent:
             self.level = self.parent.level + 1
         else:
             self.level = 0
+        super().save(*args, **kwargs)
 
 
 class Course(models.Model):
