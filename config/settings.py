@@ -108,3 +108,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # AUTOSLUG library
 AUTOSLUG_SLUGIFY_FUNCTION = slugify
+
+# THUMBNAILS
+THUMBNAIL_SIZES = [
+    {"name": "big", "width": 1920, "height": 1080},
+    {"name": "medium", "width": 1280, "height": 720},
+    {"name": "small", "width": 320, "height": 180},
+]
