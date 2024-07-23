@@ -4,7 +4,7 @@ from autoslug import AutoSlugField
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=64)
     parent = models.ForeignKey(
         "self", on_delete=models.CASCADE, related_name="children", null=True, blank=True
     )
@@ -25,9 +25,9 @@ class Category(models.Model):
 
 
 class Course(models.Model):
-    COURSE_LEVELS = [(0, "Beginner"), (1, "Intermediate"), (2, "Expert")]
+    COURSE_LEVELS = [(0, "Начальный"), (1, "Средний"), (2, "Продвинутый")]
 
-    title = models.CharField(max_length=255, unique=True)
+    title = models.CharField(max_length=60, unique=True)
     description = models.TextField()
     category = models.ForeignKey(
         Category, on_delete=models.SET_NULL, null=True, related_name="courses"
