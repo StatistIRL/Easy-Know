@@ -1,0 +1,8 @@
+.card-hover:hover {
+    box-shadow: 1px 2px 12px 0 rgba(156, 166, 230, .6);
+
+}
+
+.courses-title {
+    margin-bottom: 20px;
+}
