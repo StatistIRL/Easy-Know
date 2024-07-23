@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     # Addons
     "debug_toolbar",
     "django_extensions",
+    "django_cleanup",
 ]
 
 MIDDLEWARE = [
