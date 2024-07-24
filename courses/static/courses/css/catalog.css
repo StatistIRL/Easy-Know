@@ -6,3 +6,7 @@
 .courses-title {
     margin-bottom: 20px;
 }
+
+.course-link {
+    text-decoration-line: none;
+}
