@@ -8,6 +8,7 @@
 {% block title %}- Catalog{% endblock title %}
 
 {% block content %}
+<div class='container-fluid container-md content p-5 my-3'>
 <h1 class='courses-title'>Наши курсы:</h1>
 <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for course in courses %}
@@ -20,6 +21,7 @@
         </div>
     </div>
     {% endfor %}
+</div>
 </div>
 
 {% endblock content %}
