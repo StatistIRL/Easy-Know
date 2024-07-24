@@ -1,6 +1,7 @@
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from autoslug import AutoSlugField
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -43,6 +44,9 @@ class Course(models.Model):
     class Meta:
         db_table = "course"
         get_latest_by = "created"
+
+    def get_absolute_url(self):
+        return reverse("courses:home", kwargs={"slug": self.slug})
 
     def __str__(self):
         return self.title
