@@ -10,6 +10,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    "users",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -18,7 +19,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # apps
     "courses",
-    "users",
     "easyknow",
     "thumbnails",
     # Addons
