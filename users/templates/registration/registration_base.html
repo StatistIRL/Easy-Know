@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="content form-signin p-4 my-3">
+                {% block content_reg %}{% endblock content_reg %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
